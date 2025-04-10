@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hanoitowers.HelloController">
+   <children>
+      <ImageView disable="true" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@back.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="478.0" layoutX="630.0" layoutY="272.0" smooth="false" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="21.0" />
+      <AnchorPane prefHeight="128.0" prefWidth="1280.0" style="-fx-background-color: teal;">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#Exit" prefHeight="100.0" prefWidth="100.0" styleClass="but" stylesheets="@Style.css" text="Quit to Main Menu" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Black" size="16.0" />
+               </font>
+            </Button>
+            <Line endY="114.0" layoutX="129.0" layoutY="7.0" stroke="WHITE" strokeWidth="2.0" />
+            <AnchorPane fx:id="statsPanel1" layoutX="543.0" layoutY="14.0" prefHeight="100.0" prefWidth="194.0" style="-fx-background-color: #ffffff50; -fx-background-radius: 3;">
+               <children>
+                  <Label fx:id="TimerLabel" alignment="CENTER" layoutY="5.0" prefHeight="49.0" prefWidth="194.0" text="0:00:00" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black" size="33.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="StepLabel" alignment="CENTER" layoutY="45.0" prefHeight="50.0" prefWidth="194.0" text="0 Steps" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black" size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="autoPane" disable="true" layoutX="968.0" layoutY="14.0" prefHeight="102.0" prefWidth="295.0" style="-fx-background-color: #ffffff50; -fx-background-radius: 3;">
+               <children>
+                  <Slider fx:id="speed" layoutX="67.0" layoutY="12.0" majorTickUnit="100.0" max="1000.0" min="200.0" minorTickCount="0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="14.0" prefWidth="226.0" rotate="180.0" showTickMarks="true" snapToTicks="true" styleClass="slide" stylesheets="@Style.css" value="600.0">
+                     <tooltip>
+                        <Tooltip fx:id="tts" text="Animation Speed" />
+                     </tooltip></Slider>
+                  <Label layoutX="66.0" layoutY="5.0" prefHeight="15.0" prefWidth="233.0" text="0.5x                         1x                            2x" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Line endY="115.0" layoutX="54.0" layoutY="-14.0" startY="14.0" stroke="WHITE" strokeWidth="2.0" />
+                  <Button fx:id="prev" layoutX="67.0" layoutY="44.0" mnemonicParsing="false" onAction="#prev" prefHeight="50.0" prefWidth="50.0" styleClass="but" stylesheets="@Style.css" text="⏮">
+                     <font>
+                        <Font name="Segoe UI Black" size="23.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="tt1" text="Previous Step" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="rev" layoutX="125.0" layoutY="44.0" mnemonicParsing="false" onAction="#rev" prefHeight="50.0" prefWidth="50.0" styleClass="but" stylesheets="@Style.css" text="⯇">
+                     <font>
+                        <Font name="Segoe UI Black" size="23.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="tt2" text="Un-Solve" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="play" layoutX="183.0" layoutY="44.0" mnemonicParsing="false" onAction="#play" prefHeight="50.0" prefWidth="50.0" styleClass="but" stylesheets="@Style.css" text="⯈">
+                     <font>
+                        <Font name="Segoe UI Black" size="23.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="tt3" text="Solve" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="next" contentDisplay="CENTER" layoutX="242.0" layoutY="44.0" maxHeight="50.0" maxWidth="50.0" mnemonicParsing="false" onAction="#next" prefHeight="50.0" prefWidth="50.0" styleClass="but" stylesheets="@Style.css" text="⏭" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Black" size="23.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="tt4" text="Next Step" />
+                     </tooltip>
+                  </Button>
+                  <Button fx:id="pause" layoutX="66.0" layoutY="44.0" mnemonicParsing="false" onAction="#pause" prefHeight="50.0" prefWidth="226.0" styleClass="but" stylesheets="@Style.css" text="⏸">
+                     <font>
+                        <Font name="Segoe UI Black" size="23.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip fx:id="tt5" text="Pause" />
+                     </tooltip>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <CheckBox fx:id="Auto" contentDisplay="RIGHT" layoutX="967.0" layoutY="48.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="31.0" prefWidth="31.0" styleClass="check" stylesheets="@Style.css" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="13.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <tooltip>
+                  <Tooltip fx:id="tooltip" text="Warning! This action will reset your progress!" />
+               </tooltip>
+            </CheckBox>
+            <Label layoutX="959.0" layoutY="53.0" rotate="-90.0" text="AutoSolve" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Black" size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="139.0" layoutY="15.0" mnemonicParsing="false" onAction="#reset" prefHeight="100.0" prefWidth="100.0" styleClass="but" stylesheets="@Style.css" text="↺">
+               <font>
+                  <Font name="Segoe UI Emoji" size="43.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="505.0" layoutX="1043.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="21.0" />
+      <Button layoutX="47.0" layoutY="670.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="360.0" text="Button" visible="false" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="484.0" layoutX="217.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="21.0" />
+      <AnchorPane fx:id="warning" layoutX="509.0" layoutY="169.0" prefHeight="116.0" prefWidth="263.0" style="-fx-background-color: #FEC12B; -fx-background-radius: 20;" visible="false">
+         <children>
+            <Label layoutX="80.0" layoutY="30.0" text="Warning">
+               <font>
+                  <Font name="Segoe UI Black" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="59.0" prefHeight="49.0" prefWidth="194.0" text="Can't place a larger Disk over a smaller one!" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Bold" size="16.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="100.0" layoutY="-32.0" prefHeight="64.0" prefWidth="64.0" scaleShape="false" style="-fx-border-radius: 15; -fx-border-color: lightgrey; -fx-background-color: white; -fx-background-radius: 18; -fx-border-width: 3;" />
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="-26.0" maxHeight="161.0" maxWidth="64.0" prefHeight="109.0" prefWidth="58.0" text="⚠">
+               <font>
+                  <Font name="Segoe UI Emoji" size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="startScreen" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #80808080; -fx-effect: blur(5px);">
+         <children>
+            <AnchorPane fx:id="startScreenS" layoutX="320.0" layoutY="220.0" maxWidth="640.0" prefHeight="360.0" prefWidth="640.0" style="-fx-background-color: teal;">
+               <children>
+                  <Button fx:id="playButton" layoutX="16.0" layoutY="280.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="37.0" prefWidth="608.0" styleClass="but" stylesheets="@Style.css" text="Play!">
+                     <font>
+                        <Font name="Segoe UI Black" size="30.0" />
+                     </font>
+                  </Button>
+                  <Slider fx:id="N" blockIncrement="1.0" layoutX="610.5" layoutY="12.0" majorTickUnit="1.0" max="16.0" min="3.0" minorTickCount="0" orientation="VERTICAL" prefHeight="223.0" prefWidth="14.0" showTickMarks="true" snapToTicks="true" styleClass="slide" stylesheets="@Style.css" value="4.0" />
+                  <Rectangle fx:id="startScreen1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="16.0" layoutX="484.0" layoutY="89.0" nodeOrientation="LEFT_TO_RIGHT" stroke="BLACK" strokeType="INSIDE" visible="false" width="109.0" />
+                  <Label fx:id="nView" alignment="CENTER" layoutX="511.0" layoutY="108.0" prefHeight="64.0" prefWidth="52.0" style="-fx-effect: dropshadow(gaussian, black, 3, 0, 2, 2);" text="0" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Black" size="45.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="gameNamePanel" layoutX="16.0" layoutY="14.0" prefHeight="255.0" prefWidth="451.0" style="-fx-background-color: #ffffff50;">
+                     <children>
+                        <Label layoutX="19.0" layoutY="-10.0" prefHeight="116.0" prefWidth="360.0" style="-fx-effect: dropshadow(gaussian, black, 3, 0, 2, 2); -fx-text-fill: white;" text="Towers" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Black" size="80.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="200.0" layoutY="85.0" prefHeight="73.0" prefWidth="145.0" style="-fx-effect: dropshadow(gaussian, black, 3, 0, 2, 2); -fx-text-fill: white;" text="of" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Black" size="50.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="159.0" layoutY="135.0" prefHeight="116.0" prefWidth="289.0" style="-fx-effect: dropshadow(gaussian, black, 5, 0, 3, 3); -fx-text-fill: white;" text="Hà Nội" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Black" size="80.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="596.0" layoutY="239.0" text="↕" textFill="WHITE">
+                     <font>
+                        <Font name="Segoe UI Emoji" size="27.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane fx:id="statsPanel" layoutX="16.0" layoutY="14.0" prefHeight="255.0" prefWidth="451.0" style="-fx-background-color: #ffffff50;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="54.0" layoutY="39.0" prefHeight="50.0" prefWidth="321.0" text="⭐Well Done⭐" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Black" size="33.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="StepLabel1" alignment="CENTER" layoutX="9.0" layoutY="101.0" prefHeight="50.0" prefWidth="433.0" text="100 Steps" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Black" size="33.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="TimerLabel1" alignment="CENTER" layoutX="56.0" layoutY="161.0" prefHeight="36.0" prefWidth="334.0" text="0:00:00" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Black" size="33.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

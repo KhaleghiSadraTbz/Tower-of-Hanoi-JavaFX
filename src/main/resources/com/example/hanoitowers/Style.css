@@ -1,0 +1,75 @@
+.but{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, black, 3, 0, 2, 2)
+}
+.but:pressed {
+    -fx-background-color: #7fecec !important; /* Force red when pressed */
+    -fx-effect: dropshadow(gaussian, black, 2, 0, 1.5, 1.5)
+}
+.but:hover{
+    -fx-background-color: #dfffff;
+}
+
+
+
+/* Style the track (background bar) */
+.slide .track {
+    -fx-background-color: #ffffff; /* Light gray */
+    -fx-background-insets: 0;
+    /*-fx-background-radius: 5px;*/
+}
+
+/* Style the thumb (the draggable button) */
+.slide .thumb {
+    -fx-background-color: #008080; /* Teal */
+    -fx-border-color: white !important;
+    -fx-border-width: 2px;
+    -fx-background-radius: 50%;
+    -fx-border-radius: 50%;
+    -fx-effect: dropshadow(gaussian, black, 2, 0, -1, 1)
+    /*-fx-padding: 10px;*/
+}
+
+/* Change thumb color when pressed */
+.slide .thumb:pressed {
+    -fx-background-color: #FF8000;
+}
+
+.slide .tick-mark {
+    /*-fx-stroke: white; /* Color of tick marks */
+   /* -fx-stroke-width: 20px; /* Thickness */
+    -fx-tick-mark-fill: red;
+}
+
+
+/* Make the checkbox square */
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-width: 20px;
+    -fx-height: 20px;
+    -fx-background-radius: 0;
+    -fx-background-insets: 1px;
+}
+
+.check-box:hover .box
+{
+    -fx-background-color: #dfffff;
+}
+
+/* Customize checked state */
+/*.check-box:selected .box {
+    -fx-background-color: #FFF;
+}*/
+
+/* Checkmark for checked state */
+.check-box:selected .mark {
+    -fx-background-color: #008080;
+}
+
+
+
+
+
+
